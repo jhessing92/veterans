@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Veterans AI Companion</title>
     <meta property="og:image" content="/screenshot_2025-12-15_at_11.48.49_am.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/screenshot_2025-12-15_at_11.48.49_am.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Veterans Companion Chat Widget -->
+    <!-- Voice/Text Engines (used in Demo App Companion section only) -->
     <script src="/elevenlabs-sdk.js"></script>
     <script src="/veterans-voice-engine.js"></script>
     <script src="/veterans-text-engine.js"></script>
-    <script src="/veterans-chat-widget.js"></script>
+    <!-- Chat widget removed from marketing page - voice chat is now only in the demo app -->
   </body>
 </html>
