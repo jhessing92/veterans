@@ -1,3 +1,21 @@
 {
-	"siteId": "0fbe6c6e-9fa6-4bf6-a415-86d18f81c9f3"
+	"siteId": "0fbe6c6e-9fa6-4bf6-a415-86d18f81c9f3",
+	"geolocation": {
+		"data": {
+			"city": "Cumming",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "GA",
+				"name": "Georgia"
+			},
+			"timezone": "America/New_York",
+			"latitude": 34.2319,
+			"longitude": -84.1627,
+			"postalCode": "30040"
+		},
+		"timestamp": 1765846636340
+	}
 }
