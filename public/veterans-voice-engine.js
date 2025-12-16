@@ -39,11 +39,11 @@ window.VeteransVoiceEngine = (function() {
             <div class="voice-engine-visualizer voice-engine-idle-state">
                 <div class="voice-engine-orb">
                     <div class="voice-preloader">
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--god-bless">
                             <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--america">
                             <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
@@ -107,11 +107,11 @@ window.VeteransVoiceEngine = (function() {
             <div class="voice-engine-visualizer">
                 <div class="voice-engine-orb listening" id="voice-orb">
                     <div class="voice-preloader">
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--god-bless">
                             <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--america">
                             <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
@@ -146,11 +146,11 @@ window.VeteransVoiceEngine = (function() {
             <div class="voice-engine-visualizer">
                 <div class="voice-engine-orb">
                     <div class="voice-preloader">
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--god-bless">
                             <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
-                        <div class="voice-preloader__ring">
+                        <div class="voice-preloader__ring voice-preloader__ring--america">
                             <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
@@ -382,7 +382,7 @@ window.VeteransVoiceEngine = (function() {
                 }
 
                 .voice-engine-idle-state {
-                    margin-top: 80px !important;
+                    margin-top: 20px !important;
                 }
 
                 .voice-engine-idle-state .voice-engine-orb {
@@ -672,16 +672,26 @@ window.VeteransVoiceEngine = (function() {
                     width: 100px;
                     height: 50px;
                     perspective: 180px;
-                    animation: voicePreloaderTiltSpin 16s linear infinite;
+                    animation: voicePreloaderTiltSpin 24s linear infinite;
                     transform-style: preserve-3d;
                 }
 
                 .voice-preloader__ring {
-                    animation: voicePreloaderSpin 8s linear infinite;
+                    animation: voicePreloaderSpin 12s linear infinite;
                     transform-style: preserve-3d;
                     position: relative;
                     height: 15px;
                     width: 8px;
+                }
+
+                /* God Bless ring - spins in reverse direction */
+                .voice-preloader__ring--god-bless {
+                    animation: voicePreloaderSpinReverse 12s linear infinite;
+                }
+
+                /* America ring - spins in normal direction */
+                .voice-preloader__ring--america {
+                    animation: voicePreloaderSpin 12s linear infinite;
                 }
 
                 .voice-preloader__sector {
@@ -697,10 +707,12 @@ window.VeteransVoiceEngine = (function() {
                     height: 100%;
                     transform: translateZ(26px);
                     line-height: 1;
+                    text-decoration: none;
+                    border: none;
                 }
 
                 .voice-preloader__sector:empty::before {
-                    background: linear-gradient(transparent 45%, ${CONFIG.brandColors.white} 45% 55%, transparent 55%);
+                    background: linear-gradient(transparent 40%, rgba(255, 255, 255, 0.4) 48% 52%, transparent 60%);
                     content: "";
                     display: inline-block;
                     width: 100%;
@@ -741,6 +753,11 @@ window.VeteransVoiceEngine = (function() {
                 @keyframes voicePreloaderSpin {
                     from { transform: rotateY(0); }
                     to { transform: rotateY(1turn); }
+                }
+
+                @keyframes voicePreloaderSpinReverse {
+                    from { transform: rotateY(0); }
+                    to { transform: rotateY(-1turn); }
                 }
 
                 /* Idle state sector overrides for larger 3D depth */

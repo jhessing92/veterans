@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { Home, MessageCircle, Users, FileText, MapPin, ArrowLeft, Mic, MessageSquare, X, ChevronDown } from 'lucide-react';
+import { Home, MessageCircle, Users, FileText, MapPin, ArrowLeft, Mic, MessageSquare, X, ChevronDown, LogOut, Settings } from 'lucide-react';
+import AdminDashboard from './AdminDashboard';
 
 // Types
 interface Buddy {
@@ -228,7 +229,7 @@ function HomeView({ onNavigate }: { onNavigate: (view: string) => void }) {
           <h3 className="font-semibold text-slate-900">Battle Buddies Online</h3>
           <button onClick={() => onNavigate('buddies')} className="text-cyan-600 text-sm font-medium">View All</button>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5">
+        <div className="flex gap-3 overflow-x-auto -mx-5 px-5">
           {BUDDIES.filter(b => b.status === 'online').slice(0, 3).map((buddy) => (
             <div key={buddy.id} className="flex-shrink-0 bg-white rounded-xl p-4 border border-slate-100 shadow-sm w-36 text-center">
               <div className="relative inline-block">
@@ -268,76 +269,111 @@ function HomeView({ onNavigate }: { onNavigate: (view: string) => void }) {
 function CompanionView() {
   const [mode, setMode] = useState<'voice' | 'text'>('voice');
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const initRef = useRef(false);
 
+  // Inject engine styles once on mount
   useEffect(() => {
-    // Initialize the chat widget within our container
-    if (chatContainerRef.current) {
-      const initWidget = () => {
-        if (mode === 'voice' && window.VeteransVoiceEngine) {
-          window.VeteransTextEngine?.destroy?.();
-          window.VeteransVoiceEngine.init(chatContainerRef.current, () => {});
-        } else if (mode === 'text' && window.VeteransTextEngine) {
-          window.VeteransVoiceEngine?.destroy?.();
-          window.VeteransTextEngine.init(chatContainerRef.current, () => {});
-        }
-      };
-
-      // Small delay to ensure DOM is ready
-      const timer = setTimeout(initWidget, 100);
-      return () => {
-        clearTimeout(timer);
-        window.VeteransVoiceEngine?.destroy?.();
-        window.VeteransTextEngine?.destroy?.();
-      };
+    const existingStyles = document.getElementById('companion-engine-styles');
+    if (!existingStyles) {
+      const styles = document.createElement('style');
+      styles.id = 'companion-engine-styles';
+      styles.textContent = `
+        ${window.VeteransVoiceEngine?.getStyles?.() || ''}
+        ${window.VeteransTextEngine?.getStyles?.() || ''}
+      `;
+      document.head.appendChild(styles);
     }
+  }, []);
+
+  // Initialize/switch engine when mode changes
+  useEffect(() => {
+    const container = chatContainerRef.current;
+    if (!container) return;
+
+    // Clear container first
+    container.innerHTML = '';
+
+    const initEngine = () => {
+      if (mode === 'voice' && window.VeteransVoiceEngine) {
+        // Ensure text engine is cleaned up
+        if (window.VeteransTextEngine?.destroy) {
+          try { window.VeteransTextEngine.destroy(); } catch (e) {}
+        }
+        window.VeteransVoiceEngine.init(container, () => {});
+        initRef.current = true;
+      } else if (mode === 'text' && window.VeteransTextEngine) {
+        // Ensure voice engine is cleaned up
+        if (window.VeteransVoiceEngine?.destroy) {
+          try { window.VeteransVoiceEngine.destroy(); } catch (e) {}
+        }
+        window.VeteransTextEngine.init(container, () => {});
+        initRef.current = true;
+      }
+    };
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(initEngine, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [mode]);
+
+  // Cleanup on unmount only
+  useEffect(() => {
+    return () => {
+      if (window.VeteransVoiceEngine?.destroy) {
+        try { window.VeteransVoiceEngine.destroy(); } catch (e) {}
+      }
+      if (window.VeteransTextEngine?.destroy) {
+        try { window.VeteransTextEngine.destroy(); } catch (e) {}
+      }
+    };
+  }, []);
 
   return (
     <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="bg-slate-900 px-5 pt-4 pb-4">
-        <h1 className="text-white text-xl font-bold flex items-center gap-2">
-          AI Companion
-          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-        </h1>
-        <p className="text-slate-400 text-sm mt-1">Private, always-available support</p>
+      {/* Compact Header */}
+      <div className="bg-slate-900 px-4 pt-2 pb-3 flex-shrink-0">
+        <div className="flex items-center justify-between mb-2">
+          <h1 className="text-white text-lg font-bold flex items-center gap-2">
+            AI Companion
+            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+          </h1>
+        </div>
 
-        {/* Mode Toggle */}
-        <div className="flex bg-slate-800/50 rounded-xl p-1 mt-4 border border-slate-700/50">
+        {/* Mode Toggle - more compact */}
+        <div className="flex bg-slate-800/50 rounded-lg p-0.5 border border-slate-700/50">
           <button
             onClick={() => setMode('voice')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+            className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-md text-xs font-semibold transition-all ${
               mode === 'voice'
                 ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <Mic className="w-4 h-4" />
+            <Mic className="w-3.5 h-3.5" />
             Hands-Free
           </button>
           <button
             onClick={() => setMode('text')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+            className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-md text-xs font-semibold transition-all ${
               mode === 'text'
                 ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-3.5 h-3.5" />
             Text Chat
           </button>
         </div>
       </div>
 
       {/* Chat Container */}
-      <div ref={chatContainerRef} className="flex-1 flex flex-col overflow-hidden" />
-
-      {/* Safety Disclaimer */}
-      <div className="px-4 py-3 bg-white border-t border-slate-200 text-center">
-        <p className="text-xs text-slate-500">
-          Not a therapist or emergency service. For crisis support, call <span className="font-semibold text-cyan-600">988</span> and press 1.
-        </p>
-      </div>
+      <div 
+        ref={chatContainerRef} 
+        className="flex-1 flex flex-col overflow-hidden min-h-0"
+      />
     </div>
   );
 }
@@ -360,7 +396,7 @@ function BuddiesView({ onConnect }: { onConnect: (buddy: Buddy) => void }) {
         <p className="text-slate-400 text-sm mt-1">Connect with veterans who understand</p>
 
         {/* Filters */}
-        <div className="flex gap-2 mt-4 overflow-x-auto pb-1 -mx-5 px-5">
+        <div className="flex gap-2 mt-4 overflow-x-auto -mx-5 px-5">
           {['All', 'Online', 'Army', 'Navy', 'Marines', 'Air Force'].map((f) => (
             <button
               key={f}
@@ -587,7 +623,7 @@ function ResourcesView() {
         <p className="text-slate-400 text-sm mt-1">Veteran-friendly services near Roswell, GA</p>
 
         {/* Type Filters */}
-        <div className="flex gap-2 mt-4 overflow-x-auto pb-1 -mx-5 px-5">
+        <div className="flex gap-2 mt-4 overflow-x-auto -mx-5 px-5">
           {types.map((type) => (
             <button
               key={type}
@@ -607,7 +643,7 @@ function ResourcesView() {
       {/* Upcoming Events */}
       <div className="px-5 py-4">
         <h3 className="font-semibold text-slate-900 mb-3">Upcoming Events</h3>
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5">
+        <div className="flex gap-3 overflow-x-auto -mx-5 px-5">
           {EVENTS.map((event) => (
             <div key={event.id} className="flex-shrink-0 w-64 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-2xl p-4 text-white shadow-lg">
               <p className="text-cyan-100 text-xs uppercase tracking-wider">{event.date} • {event.time}</p>
@@ -699,6 +735,7 @@ declare global {
 export default function DemoApp({ onBack }: DemoAppProps) {
   const [currentView, setCurrentView] = useState<string>('home');
   const [showConnectionToast, setShowConnectionToast] = useState<string | null>(null);
+  const [showAdmin, setShowAdmin] = useState(false);
 
   const handleConnect = (buddy: Buddy) => {
     setShowConnectionToast(buddy.name);
@@ -713,25 +750,28 @@ export default function DemoApp({ onBack }: DemoAppProps) {
     { id: 'resources', icon: MapPin, label: 'Resources' },
   ];
 
+  // Show admin dashboard
+  if (showAdmin) {
+    return <AdminDashboard onBack={() => setShowAdmin(false)} />;
+  }
+
   return (
     <div className="fixed inset-0 bg-slate-100 flex flex-col">
       {/* Status Bar Simulation */}
       <div className="bg-slate-900 h-11 flex items-center justify-between px-6 text-white text-xs font-medium flex-shrink-0">
         <span>9:41</span>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowAdmin(true)}
+            className="p-1.5 hover:bg-slate-800 rounded transition-colors mr-1"
+            title="Admin Dashboard"
+          >
+            <Settings className="w-4 h-4 text-slate-400 hover:text-white" />
+          </button>
           <span>📶</span>
           <span>🔋</span>
         </div>
       </div>
-
-      {/* Back to Marketing */}
-      <button
-        onClick={onBack}
-        className="absolute top-12 left-4 z-50 flex items-center gap-1 text-sm text-slate-400 hover:text-white bg-slate-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Exit Demo
-      </button>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -743,24 +783,31 @@ export default function DemoApp({ onBack }: DemoAppProps) {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-white border-t border-slate-200 px-2 pb-6 pt-2 flex-shrink-0">
-        <div className="flex justify-around">
+      <div className="bg-white border-t border-slate-200 px-4 pb-6 pt-2 flex-shrink-0">
+        <div className="flex justify-between items-center">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => setCurrentView(item.id)}
-              className={`flex flex-col items-center gap-1 py-2 px-3 rounded-xl transition-all ${
+              className={`flex-1 flex flex-col items-center gap-1 py-2 rounded-xl transition-all ${
                 currentView === item.id
                   ? 'text-cyan-600'
                   : 'text-slate-400 hover:text-slate-600'
               }`}
             >
-              <item.icon className={`w-6 h-6 ${currentView === item.id ? 'stroke-[2.5]' : ''}`} />
-              <span className={`text-xs ${currentView === item.id ? 'font-semibold' : ''}`}>
+              <item.icon className={`w-5 h-5 ${currentView === item.id ? 'stroke-[2.5]' : ''}`} />
+              <span className={`text-[10px] ${currentView === item.id ? 'font-semibold' : ''}`}>
                 {item.label}
               </span>
             </button>
           ))}
+          <button
+            onClick={onBack}
+            className="flex-1 flex flex-col items-center gap-1 py-2 rounded-xl transition-all text-slate-400 hover:text-red-500"
+          >
+            <LogOut className="w-5 h-5" />
+            <span className="text-[10px]">Exit</span>
+          </button>
         </div>
       </div>
 

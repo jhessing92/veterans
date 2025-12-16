@@ -51,8 +51,9 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Demo app specific styles */
-.demo-app-container {
+/* Demo app specific styles - fullscreen mobile */
+html, body {
+  overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -72,12 +73,16 @@
 }
 
 /* Hide scrollbar but keep functionality */
-.hide-scrollbar {
+.hide-scrollbar,
+.scrollbar-hide,
+.overflow-x-auto {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
+.hide-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar {
   display: none;
 }
 
@@ -86,4 +91,9 @@
   button, a {
     -webkit-tap-highlight-color: transparent;
   }
+}
+
+/* Prevent body scroll when demo is open */
+body:has(.fixed.inset-0) {
+  overflow: hidden;
 }

@@ -30,19 +30,34 @@ window.VeteransTextEngine = (function() {
         return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
 
+    const CONVERSATION_STARTERS = [
+        "I'm struggling to sleep lately",
+        "Help me understand my VA benefits",
+        "I need to talk about transition stress",
+        "What resources are near me?",
+        "I'm feeling isolated today"
+    ];
+
     function renderChat() {
         const content = container.querySelector('.text-engine-content');
         if (!content) return;
+
+        const startersHtml = CONVERSATION_STARTERS.map(starter => 
+            `<button class="text-engine-starter">${starter}</button>`
+        ).join('');
 
         content.innerHTML = `
             <div class="text-engine-messages" id="text-messages">
                 <div class="text-engine-welcome">
                     <div class="text-engine-welcome-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                     </div>
                     <p>I'm here with you. What's going on today?</p>
+                    <div class="text-engine-starters" id="text-starters">
+                        ${startersHtml}
+                    </div>
                 </div>
             </div>
             <div class="text-engine-input-container">
@@ -91,6 +106,17 @@ window.VeteransTextEngine = (function() {
                 }
             });
         }
+
+        // Set up conversation starter buttons
+        const starters = container.querySelectorAll('.text-engine-starter');
+        starters.forEach(starter => {
+            starter.addEventListener('click', () => {
+                const text = starter.textContent;
+                if (text && !isStreaming) {
+                    sendMessage(text);
+                }
+            });
+        });
     }
 
     function addMessage(text, isUser = false) {
@@ -312,6 +338,39 @@ window.VeteransTextEngine = (function() {
                     line-height: 1.5;
                 }
 
+                .text-engine-starters {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    justify-content: center;
+                    margin-top: 16px;
+                    max-width: 320px;
+                }
+
+                .text-engine-starter {
+                    background: white;
+                    border: 1.5px solid #e2e8f0;
+                    border-radius: 20px;
+                    padding: 8px 14px;
+                    font-size: 12px;
+                    color: ${CONFIG.brandColors.text};
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    text-align: left;
+                    line-height: 1.3;
+                }
+
+                .text-engine-starter:hover {
+                    border-color: ${CONFIG.brandColors.primary};
+                    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
+                    color: ${CONFIG.brandColors.primary};
+                    transform: translateY(-1px);
+                }
+
+                .text-engine-starter:active {
+                    transform: translateY(0);
+                }
+
                 .text-engine-message {
                     display: flex;
                     max-width: 85%;
@@ -417,20 +476,24 @@ window.VeteransTextEngine = (function() {
 
                 .text-engine-input {
                     flex: 1;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 20px;
-                    padding: 10px 16px;
-                    font-size: 14px;
+                    border: 2px solid #e2e8f0;
+                    border-radius: 24px;
+                    padding: 12px 18px;
+                    font-size: 15px;
                     font-family: inherit;
                     resize: none;
                     outline: none;
                     max-height: 120px;
                     line-height: 1.4;
+                    background: #f8fafc;
+                    color: #1e293b;
+                    transition: all 0.2s ease;
                 }
 
                 .text-engine-input:focus {
                     border-color: ${CONFIG.brandColors.primary};
-                    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+                    background: #ffffff;
+                    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
                 }
 
                 .text-engine-input::placeholder {
