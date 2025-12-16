@@ -106,9 +106,11 @@ function HomeView({ onNavigate }: { onNavigate: (view: string) => void }) {
             <h1 className="text-white text-2xl font-bold">Michael</h1>
           </div>
           <div className="relative">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center text-white font-bold text-lg">
-              M
-            </div>
+            <img 
+              src="/vetty.png" 
+              alt="Profile" 
+              className="w-12 h-12 rounded-full object-cover border-2 border-cyan-500/30"
+            />
             <div className="absolute -top-1 -right-1 w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center text-xs font-bold text-white">
               {streak}
             </div>

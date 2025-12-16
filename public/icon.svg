@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#EAE4D8"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#1E3A5F" stroke-width="20"/>
+  
+  <!-- Top Text "VETERAN'S" -->
+  <path d="M140 140 Q150 120, 170 115 L190 115 L200 125 L185 180 L165 180 L140 140" fill="#1E3A5F"/>
+  <text x="256" y="130" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#1E3A5F" text-anchor="middle" letter-spacing="8">VETERAN'S</text>
+  
+  <!-- Bottom Text "COMPANION" -->
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#1E3A5F" text-anchor="middle" letter-spacing="6">COMPANION</text>
+  
+  <!-- Military Cap -->
+  <g transform="translate(256, 256)">
+    <!-- Cap Base -->
+    <ellipse cx="0" cy="20" rx="90" ry="15" fill="#1E3A5F"/>
+    <path d="M-90 20 L-85 -10 Q-70 -40, -40 -50 L40 -50 Q70 -40, 85 -10 L90 20 Z" fill="#2A5080"/>
+    
+    <!-- Cap Top -->
+    <path d="M-85 -10 L-75 -35 Q-60 -55, -30 -60 L30 -60 Q60 -55, 75 -35 L85 -10 Z" fill="#1E3A5F"/>
+    
+    <!-- Cap Brim -->
+    <path d="M-90 20 Q-95 25, -100 27 L-110 30 L-110 35 Q-100 32, -90 28 Z M90 20 Q95 25, 100 27 L110 30 L110 35 Q100 32, 90 28 Z" fill="#16293D"/>
+    
+    <!-- Star on Cap -->
+    <path d="M0 -30 L3 -20 L14 -20 L5 -12 L8 -2 L0 -10 L-8 -2 L-5 -12 L-14 -20 L-3 -20 Z" fill="#FBD38D"/>
+  </g>
+</svg>
+
