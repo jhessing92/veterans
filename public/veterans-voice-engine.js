@@ -1,5 +1,5 @@
 /**
- * Veterans Companion - Voice Chat Engine
+ * Vetted - Voice Chat Engine
  *
  * Full voice conversation using ElevenLabs Conversational AI SDK.
  * Designed to be rendered inside a container element.
@@ -50,7 +50,7 @@ window.VeteransVoiceEngine = (function() {
                     </div>
                 </div>
             </div>
-            <p class="voice-engine-status">Chat with your Veteran Companion</p>
+            <p class="voice-engine-status">Chat with Vetted</p>
             <div class="voice-engine-controls">
                 <button class="voice-engine-btn primary" id="voice-start-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -336,7 +336,7 @@ window.VeteransVoiceEngine = (function() {
                 <div class="voice-engine-content"></div>
                 <p class="voice-engine-disclaimer">
                     Not a therapist or emergency service. For crisis support, call 988 and press 1.<br>
-                    <span style="font-size: 10px; opacity: 0.7;">Veterans Companion Pilot</span>
+                    <span style="font-size: 10px; opacity: 0.7;">Vetted Pilot</span>
                 </p>
             `;
 

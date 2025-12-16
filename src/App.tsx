@@ -78,13 +78,13 @@ function App() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-[1.1] tracking-tight">
-              <span className="text-white">Veterans AI</span>
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">"Vetted"</span>
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">Companion Pilot</span>
+              <span className="text-white text-3xl sm:text-4xl md:text-5xl">Veteran AI Companion</span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-4 sm:mb-6 leading-relaxed">
-              Private, always-available support designed to help in minutes.
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-3 sm:mb-4 leading-relaxed font-medium">
+              Trusted. Secure. Private. Help in minutes, not months.
             </p>
 
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
@@ -218,7 +218,7 @@ function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { num: '01', title: 'AI Companion', desc: 'Private support, guidance, and next steps with safety guardrails', color: 'from-cyan-500 to-blue-500' },
+              { num: '01', title: 'Vetted Companion', desc: 'Private support, guidance, and next steps with safety guardrails', color: 'from-cyan-500 to-blue-500' },
               { num: '02', title: 'Battle Buddy Matching', desc: 'Connect with veterans who share similar experiences', color: 'from-teal-500 to-emerald-500' },
               { num: '03', title: 'Benefits Navigator', desc: 'Identify likely benefits and how to pursue them', color: 'from-emerald-500 to-green-500' },
               { num: '04', title: 'Local Resources', desc: 'Veteran-friendly services, events, and opportunities', color: 'from-amber-500 to-orange-500' },
@@ -404,13 +404,13 @@ function App() {
               Experience it <span className="text-cyan-400">yourself</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Try our mobile-first demo to see all features in action. Explore the AI Companion, Battle Buddy matching, Benefits Navigator, and Local Resources — all interconnected in one seamless experience.
+              Try our mobile-first demo to see all features in action. Explore the Vetted Companion, Battle Buddy matching, Benefits Navigator, and Local Resources — all interconnected in one seamless experience.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {[
-              { text: 'AI Companion with voice and text chat for private, always-available support' },
+              { text: 'Vetted Companion with voice and text chat for private, always-available support' },
               { text: 'Battle Buddy matching to connect with veterans who share similar experiences' },
               { text: 'Benefits Navigator and Local Resources to help you access what you\'ve earned' }
             ].map((item, i) => (
@@ -448,7 +448,7 @@ function App() {
             className="h-8 sm:h-10 w-auto mx-auto mb-4 sm:mb-6"
           />
           <p className="text-slate-500 text-sm sm:text-base">
-            Veterans AI Companion Pilot — A Community-Backed Initiative
+            Vetted Pilot — A Community-Backed Initiative
           </p>
           <p className="text-slate-600 text-xs sm:text-sm mt-3 sm:mt-4">
             2025 ShooFly AI. All rights reserved.

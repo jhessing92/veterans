@@ -1,5 +1,5 @@
 /**
- * Veterans Companion - Chat Widget Controller
+ * Vetted - Chat Widget Controller
  *
  * Main widget that manages mode switching between:
  * - Voice Mode: Uses VeteransVoiceEngine (voice chat with ElevenLabs Agent)
@@ -470,7 +470,7 @@
     // Render toggle button (closed state)
     function renderToggleButton() {
         return `
-            <button class="veterans-widget-button" id="veterans-chat-toggle-btn" title="Talk to Veterans Companion">
+            <button class="veterans-widget-button" id="veterans-chat-toggle-btn" title="Talk to Vetted">
                 <svg viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
@@ -487,7 +487,7 @@
                     <div class="veterans-chat-header-top">
                         <div class="veterans-chat-header-info">
                             <h3>
-                                Veterans Companion
+                                Vetted
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                                 </svg>

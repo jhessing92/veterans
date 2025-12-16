@@ -187,7 +187,7 @@ function LoginScreen({ onLogin, onBack }: { onLogin: () => void; onBack: () => v
             <Lock className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Access</h1>
-          <p className="text-slate-400 text-sm mt-2">Veterans Companion Pilot Dashboard</p>
+          <p className="text-slate-400 text-sm mt-2">Vetted Pilot Dashboard</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -500,7 +500,7 @@ export default function AdminDashboard({ onBack }: { onBack: () => void }) {
         <div className="flex items-center justify-between mb-3">
           <div>
             <h1 className="text-white text-lg font-bold">Admin Dashboard</h1>
-            <p className="text-slate-400 text-xs">Veterans Companion Pilot</p>
+            <p className="text-slate-400 text-xs">Vetted Pilot</p>
           </div>
           <div className="flex items-center gap-2">
             <button

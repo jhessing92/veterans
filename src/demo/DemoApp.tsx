@@ -339,7 +339,7 @@ function CompanionView() {
       <div className="bg-slate-900 px-4 pt-2 pb-3 flex-shrink-0">
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-white text-lg font-bold flex items-center gap-2">
-            AI Companion
+            Vetted
             <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
           </h1>
         </div>

@@ -1,5 +1,5 @@
 /**
- * Veterans Companion - Text Chat Engine
+ * Vetted - Text Chat Engine
  *
  * Text-based chat using Claude API with streaming responses.
  * Designed to be rendered inside a container element.
@@ -266,7 +266,7 @@ window.VeteransTextEngine = (function() {
                 <div class="text-engine-content"></div>
                 <p class="text-engine-disclaimer">
                     Not a therapist or emergency service. For crisis support, call 988 and press 1.<br>
-                    <span style="font-size: 10px; opacity: 0.7;">Veterans Companion Pilot</span>
+                    <span style="font-size: 10px; opacity: 0.7;">Vetted Pilot</span>
                 </p>
             `;
 

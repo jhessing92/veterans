@@ -1,6 +1,6 @@
 {
-  "name": "Veterans AI Companion",
-  "short_name": "Veterans Companion",
+  "name": "Vetted",
+  "short_name": "Vetted",
   "description": "Private, always-available support for veterans",
   "start_url": "/",
   "display": "standalone",
