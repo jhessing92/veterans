@@ -1,8 +1,15 @@
-import { Shield, Compass, BarChart3, Heart, Users, MapPin, TrendingUp, Lock, CheckCircle2, ExternalLink, ArrowRight, Zap, Target, Activity, Menu, X } from 'lucide-react';
+import { Shield, Compass, BarChart3, Heart, Users, MapPin, TrendingUp, Lock, CheckCircle2, ArrowRight, Zap, Target, Activity, Menu, X, Smartphone } from 'lucide-react';
 import { useState } from 'react';
+import DemoApp from './demo/DemoApp';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
+
+  // If showing demo, render the demo app
+  if (showDemo) {
+    return <DemoApp onBack={() => setShowDemo(false)} />;
+  }
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -14,12 +21,21 @@ function App() {
             alt="ShooflyAI"
             className="h-8 sm:h-10 w-auto"
           />
-          <button
-            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setShowDemo(true)}
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+            >
+              <Smartphone className="w-4 h-4" />
+              Try Demo
+            </button>
+            <button
+              className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {mobileMenuOpen && (
@@ -27,7 +43,16 @@ function App() {
             <nav className="flex flex-col gap-3">
               <a href="#outcomes" className="text-slate-300 hover:text-white py-2">Outcomes</a>
               <a href="#solution" className="text-slate-300 hover:text-white py-2">Solution</a>
-              <a href="#demo" className="text-slate-300 hover:text-white py-2">Demo</a>
+              <button
+                onClick={() => {
+                  setShowDemo(true);
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 py-2 font-semibold"
+              >
+                <Smartphone className="w-4 h-4" />
+                Try Demo
+              </button>
             </nav>
           </div>
         )}
@@ -65,6 +90,24 @@ function App() {
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
               Benefits guidance, local resources, and peer connection. Running now through April 2025.
             </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10">
+              <button
+                onClick={() => setShowDemo(true)}
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all duration-300"
+              >
+                <Smartphone className="w-6 h-6" />
+                <span>See the Demo</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <a
+                href="#solution"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all"
+              >
+                Learn More
+              </a>
+            </div>
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-8 sm:mt-12">
               <div className="flex items-center gap-2 sm:gap-3">
@@ -189,6 +232,19 @@ function App() {
                 <p className="text-sm sm:text-base text-slate-600">{feature.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Demo CTA in Solution Section */}
+          <div className="mt-10 sm:mt-14 text-center">
+            <button
+              onClick={() => setShowDemo(true)}
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all duration-300"
+            >
+              <Smartphone className="w-6 h-6" />
+              <span>Experience All Features</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <p className="text-slate-500 text-sm mt-4">Interactive mobile demo — no signup required</p>
           </div>
 
           <div className="mt-8 sm:mt-12 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-amber-50 border-l-4 border-amber-400">
@@ -336,27 +392,27 @@ function App() {
         </div>
       </section>
 
-      {/* Demo Section */}
+      {/* Demo CTA Section (replacing the old external demo section) */}
       <section id="demo" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>Proof of Interaction Model</span>
+              <Smartphone className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>Interactive Demo</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-              See a demo <span className="text-cyan-400">(different topic, same engine)</span>
+              Experience it <span className="text-cyan-400">yourself</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              This demo is from a separate high-stakes pilot in a different domain. It's relevant because it shows the exact interaction model we're reusing here: structured guidance, clear guardrails, and safety-first behavior when questions cross the line.
+              Try our mobile-first demo to see all features in action. Explore the AI Companion, Battle Buddy matching, Benefits Navigator, and Local Resources — all interconnected in one seamless experience.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {[
-              { text: 'Shows how the assistant handles sensitive questions with boundaries and responsible routing' },
-              { text: 'Demonstrates step-by-step "next best action" guidance instead of vague responses' },
-              { text: 'Represents the same UX pattern and feedback loop the veterans pilot will be built on' }
+              { text: 'AI Companion with voice and text chat for private, always-available support' },
+              { text: 'Battle Buddy matching to connect with veterans who share similar experiences' },
+              { text: 'Benefits Navigator and Local Resources to help you access what you\'ve earned' }
             ].map((item, i) => (
               <div key={i} className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-slate-800/50 border border-slate-700/50">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border border-cyan-500/30 flex items-center justify-center mb-3 sm:mb-4">
@@ -368,20 +424,16 @@ function App() {
           </div>
 
           <div className="text-center">
-            <p className="text-slate-400 text-sm sm:text-base mb-4 sm:mb-6 font-medium">
-              Demo available at: <span className="text-cyan-400">strickland-ai-chat.netlify.app</span>
-            </p>
-            <a
-              href="https://strickland-ai-chat.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold text-base sm:text-lg hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all duration-300"
+            <button
+              onClick={() => setShowDemo(true)}
+              className="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-xl hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all duration-300"
             >
-              <span>View Demo</span>
-              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            </a>
+              <Smartphone className="w-7 h-7" />
+              <span>Launch Demo</span>
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
             <p className="text-slate-500 text-xs sm:text-sm mt-6 sm:mt-8 max-w-xl mx-auto">
-              Demo content is not veteran-specific. The veterans pilot will use veteran-focused resources, language, and escalation pathways.
+              Mobile-optimized experience. Works on any device — no installation or signup required.
             </p>
           </div>
         </div>

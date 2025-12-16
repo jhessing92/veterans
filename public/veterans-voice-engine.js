@@ -40,17 +40,17 @@ window.VeteransVoiceEngine = (function() {
                 <div class="voice-engine-orb">
                     <div class="voice-preloader">
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">l</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">s</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">g</div>
+                            <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">V</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">r</div><div class="voice-preloader__sector">a</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">s</div>
-                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
+                            <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
+                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="voice-engine-status">Click to start a voice conversation</p>
+            <p class="voice-engine-status">Chat with your Veteran Companion</p>
             <div class="voice-engine-controls">
                 <button class="voice-engine-btn primary" id="voice-start-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -108,12 +108,12 @@ window.VeteransVoiceEngine = (function() {
                 <div class="voice-engine-orb listening" id="voice-orb">
                     <div class="voice-preloader">
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">l</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">s</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">g</div>
+                            <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">V</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">r</div><div class="voice-preloader__sector">a</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">s</div>
-                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
+                            <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
+                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                     </div>
                 </div>
@@ -147,12 +147,12 @@ window.VeteransVoiceEngine = (function() {
                 <div class="voice-engine-orb">
                     <div class="voice-preloader">
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">l</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">s</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">i</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">g</div>
+                            <div class="voice-preloader__sector">G</div><div class="voice-preloader__sector">O</div><div class="voice-preloader__sector">D</div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector">B</div><div class="voice-preloader__sector">L</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">S</div><div class="voice-preloader__sector">S</div>
                             <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                         <div class="voice-preloader__ring">
-                            <div class="voice-preloader__sector">V</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">t</div><div class="voice-preloader__sector">e</div><div class="voice-preloader__sector">r</div><div class="voice-preloader__sector">a</div><div class="voice-preloader__sector">n</div><div class="voice-preloader__sector">s</div>
-                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
+                            <div class="voice-preloader__sector">A</div><div class="voice-preloader__sector">M</div><div class="voice-preloader__sector">E</div><div class="voice-preloader__sector">R</div><div class="voice-preloader__sector">I</div><div class="voice-preloader__sector">C</div><div class="voice-preloader__sector">A</div>
+                            <div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div><div class="voice-preloader__sector"></div>
                         </div>
                     </div>
                 </div>
@@ -677,15 +677,11 @@ window.VeteransVoiceEngine = (function() {
                 }
 
                 .voice-preloader__ring {
-                    animation: voicePreloaderSpin 10s linear infinite;
+                    animation: voicePreloaderSpin 8s linear infinite;
                     transform-style: preserve-3d;
                     position: relative;
                     height: 15px;
                     width: 8px;
-                }
-
-                .voice-preloader__ring:nth-child(even) {
-                    animation-direction: reverse;
                 }
 
                 .voice-preloader__sector {
